@@ -6,10 +6,10 @@ date
 # Check by HTML5 validator
 vnu *.html
 vnu */*.html
+echo "These files were checked"
 ls *.html
 ls */*.html
 echo "HTML5 validator runs successfully"
-echo
 
 # Check by Linter configurations for Stolley's classes (ITMD 361, COM 330/530)
 htmllint
