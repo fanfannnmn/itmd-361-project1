@@ -33,4 +33,4 @@ git add .
 git diff
 read -p "Commit: " commit
 git commit -m "$commit"
-git push
+git push origin dev
