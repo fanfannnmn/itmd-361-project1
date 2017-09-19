@@ -28,7 +28,7 @@ echo
 #echo
 
 # Git hooks
-echo "If there is any error shows above, interrupt(Ctrl+C) the script ."
+read -p "If there is any error shows above, interrupt(Ctrl+C) the script." -n1 -s
 git add .
 git diff
 read -p "Commit: " commit
