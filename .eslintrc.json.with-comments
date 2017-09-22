@@ -1,4 +1,6 @@
 {
+
+  "_version": "Stolley House Config, v. 0.1.1, 20170920",
   "root": true, // don't look further up the directory tree for any more eslint rules
   "extends": "eslint:recommended", // load basic eslint rules
   "env": {

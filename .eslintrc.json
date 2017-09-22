@@ -1,4 +1,6 @@
 {
+
+  "_version": "Stolley House Config, v. 0.1.1, 20170920",
   "root": true,
   "extends": "eslint:recommended",
   "env": {
@@ -16,7 +18,7 @@
     "valid-typeof": 1,
     "no-loop-func": 2,
     "no-redeclare": 1,
-    "vars-on-top": 1, 
+    "vars-on-top": 1,
     "no-undef": 1,
     "no-unused-vars": 1,
     "camelcase": 1,
