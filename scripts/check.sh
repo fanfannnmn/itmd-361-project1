@@ -10,7 +10,8 @@ read -p "Selection: " decision
 
 if [ $decision -eq 1 ] ; then
 # Install necessary packages
-npm install -g http-server htmllint-cli stylelint eslint jshint vnu-jar
+npm install -g http-server htmllint-cli stylelint eslint jshint
+brew install vnu
 fi
 
 if [ $decision -eq 2 ] ; then
