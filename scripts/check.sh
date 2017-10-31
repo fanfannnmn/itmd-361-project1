@@ -29,8 +29,10 @@ date
 # Replace any linter configurations to official
 # https://gist.github.com/559aac5112928c7c24c628c6305b70b8
 rm .htmllintrc .eslintrc.json .eslintrc.json.with-comments .stylelintrc
-wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/20d27aeb4fc9992fdf882880524d781fbfea9ac2/.eslintrc.json https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/20d27aeb4fc9992fdf882880524d781fbfea9ac2/.eslintrc.json.with-comments https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/20d27aeb4fc9992fdf882880524d781fbfea9ac2/.htmllintrc https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/20d27aeb4fc9992fdf882880524d781fbfea9ac2/.stylelintrc
-
+wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc309bbcdf12b713c1c02a6cf2945a57c2dad111/.eslintrc.json
+wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc309bbcdf12b713c1c02a6cf2945a57c2dad111/.eslintrc.json.with-comments
+wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc309bbcdf12b713c1c02a6cf2945a57c2dad111/.htmllintrc
+wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc309bbcdf12b713c1c02a6cf2945a57c2dad111/.stylelintrc
 # html validator
 vnu *.html
 vnu */*.html
@@ -54,6 +56,13 @@ echo "Run CSS Validation manually"
 echo "https://jigsaw.w3.org/css-validator/#validate_by_input"
 
 # eslint check
+eslint */*.js
+eslint *.js
+echo "These files were checked"
+ls *.js
+ls */*.js
+echo "ESlint runs successfully"
+echo
 
 fi
 
@@ -84,6 +93,13 @@ echo "Run CSS Validation manually"
 echo "https://jigsaw.w3.org/css-validator/#validate_by_input"
 
 # eslint check
+eslint */*.js
+eslint *.js
+echo "These files were checked"
+ls *.js
+ls */*.js
+echo "ESlint runs successfully"
+echo
 
 # git hooks
 read -p "If there is any error shows above, interrupt(Ctrl+C) the script." -n1 -s

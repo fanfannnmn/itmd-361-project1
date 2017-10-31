@@ -1,28 +1,44 @@
 {
 
-  "_version": "Stolley House Config, v. 0.1.1, 20170920",
+  "settings": {
+    "_version": "Stolley House Config, v. 1.0.1, 20171025",
+    "_eslint_version": "4.9.0",
+    "_rules_url": "https://eslint.org/docs/rules/"
+  },
   "root": true, // don't look further up the directory tree for any more eslint rules
-  "extends": "eslint:recommended", // load basic eslint rules
   "env": {
     "browser": true, // for browser testing
     "jquery": true // with jQuery, if used
   },
+  "extends": "eslint:recommended", // load basic eslint rules
   "rules": {
-    "comma-dangle": ["error", "never"], // no trailing commas
-    "no-console": 0, // allow use of console calls
-    "indent": ["error", 2], // indent by two spaces
-    "curly": 2, // always use curly braces around blocks
-    "consistent-return": 1, // always `return` from functions
-    "eqeqeq": 2, // always test for type, !== and ===
-    "use-isnan": 1, // require use of isNaN in comparisons
-    "valid-typeof": 1, // typeof compared against a valid string
-    "no-loop-func": 2, // no function declarations inside loops
-    "no-redeclare": 1, // don't allow the same variable to be declared again
+    // Deviations from eslint:recommended
+    "no-console": "off", // allow use of console calls
+
+    // Best Practices
+    "block-scoped-var": "warn", // scope variables to blocks
+    "curly": ["error", "all"], // always use curly braces around blocks
+    "default-case": "warn", // require default cases in switch statements
+    "eqeqeq": "error", // always test for type, !== and ===
+    "no-alert": "warn", // no annoying pop-up boxes
+    "no-implicit-globals": "warn", // warn about global variables
     "vars-on-top": 1, // declare variables at the top of function scope
-    "no-undef": 1, // all variables must be declared with var
-    "no-unused-vars": 1, // all variables must also be used
-    "camelcase": 1, // use camelCase names
-    "comma-spacing": ["error", { "before": false, "after": true }], // spaces before commas
-    "semi-spacing": ["error", {"before": false, "after": true}] // no spaces before semicolons
+    "yoda": "error", // disallow Yoda conditions
+
+    // Variables
+    "no-undefined": "error", // disallow undefined as an identifier
+
+    // Stylistic Issues
+    "comma-dangle": ["error", "never"], // no trailing commas
+    "comma-spacing": ["error", { "before": false, "after": true }], // spaces after commas
+    "func-call-spacing": "warn", // no spaces between function name and parentheses
+    "indent": ["error", 2], // indent by two spaces
+    "linebreak-style": ["error", "unix"], // Unix-style line endings
+    "multiline-comment-style": ["warn", "separate-lines"], // double-slash style comments
+    "spaced-comment": ["warn", "always"], // spaces after double-slash comment markers
+    "semi": ["warn", "always"], // always require semicolons after statements
+    "semi-spacing": ["error", {"before": false, "after": true}] // spaces after semicolons
+
   }
+
 }
