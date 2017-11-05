@@ -1,10 +1,12 @@
-#!/bin/sh
+#! /bin/bash
+
+# macOS User: bad interpreter: Operation not permitted
+# xattr -d com.apple.quarantine check.sh
 
 # Place this script under your project folder
 echo "1: Install necessary packages"
-echo "2: Initialize project folder"
-echo "3: Check code"
-echo "4: Check code and push to GitHub"
+echo "2: Check code"
+echo "3: Check code and push to GitHub"
 
 read -p "Selection: " decision
 
@@ -15,14 +17,6 @@ brew install vnu
 fi
 
 if [ $decision -eq 2 ] ; then
-# Initialize Git, htmllint, stylelint
-git init
-htmllint init
-stylelint init
-eslint --init
-fi
-
-if [ $decision -eq 3 ] ; then
 # Show the system time
 date
 
@@ -33,6 +27,7 @@ wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc
 wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc309bbcdf12b713c1c02a6cf2945a57c2dad111/.eslintrc.json.with-comments
 wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc309bbcdf12b713c1c02a6cf2945a57c2dad111/.htmllintrc
 wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc309bbcdf12b713c1c02a6cf2945a57c2dad111/.stylelintrc
+
 # html validator
 vnu *.html
 vnu */*.html
@@ -54,6 +49,7 @@ echo
 ## css validator
 echo "Run CSS Validation manually"
 echo "https://jigsaw.w3.org/css-validator/#validate_by_input"
+echo
 
 # eslint check
 eslint */*.js
@@ -66,7 +62,7 @@ echo
 
 fi
 
-if [ $decision -eq 4 ] ; then
+if [ $decision -eq 3 ] ; then
 # Show the system time
 date
 
@@ -88,10 +84,6 @@ stylelint "*.css"
 echo "stylelint runs successfully"
 echo
 
-## css validator
-echo "Run CSS Validation manually"
-echo "https://jigsaw.w3.org/css-validator/#validate_by_input"
-
 # eslint check
 eslint */*.js
 eslint *.js
@@ -99,6 +91,11 @@ echo "These files were checked"
 ls *.js
 ls */*.js
 echo "ESlint runs successfully"
+echo
+
+## css validator
+echo "Run CSS Validation manually"
+echo "https://jigsaw.w3.org/css-validator/#validate_by_input"
 echo
 
 # git hooks
