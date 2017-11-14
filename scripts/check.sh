@@ -66,6 +66,15 @@ ls */*.js
 echo "ESlint runs successfully"
 echo
 
+# jshint
+jshint */*.js
+jshint *.js
+echo "These files were checked"
+ls *.js
+ls */*.js
+echo "JSHint runs successfully"
+echo
+
 fi
 
 if [ $decision -eq 4 ] ; then
