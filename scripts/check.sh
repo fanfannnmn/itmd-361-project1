@@ -5,8 +5,9 @@
 
 # Place this script under your project folder
 echo "1: Install necessary packages"
-echo "2: Check code"
-echo "3: Check code and push to GitHub"
+echo "2: Download Linter Configurations"
+echo "3: Check code"
+echo "4: Check code and push to GitHub"
 
 read -p "Selection: " decision
 
@@ -28,6 +29,11 @@ wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc
 wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc309bbcdf12b713c1c02a6cf2945a57c2dad111/.htmllintrc
 wget https://gist.github.com/profstolley/559aac5112928c7c24c628c6305b70b8/raw/dc309bbcdf12b713c1c02a6cf2945a57c2dad111/.stylelintrc
 
+fi
+
+if [ $decision -eq 3 ] ; then
+# Show the system time
+date
 # html validator
 vnu *.html
 vnu */*.html
@@ -62,7 +68,7 @@ echo
 
 fi
 
-if [ $decision -eq 3 ] ; then
+if [ $decision -eq 4 ] ; then
 # Show the system time
 date
 
@@ -91,6 +97,15 @@ echo "These files were checked"
 ls *.js
 ls */*.js
 echo "ESlint runs successfully"
+echo
+
+# jshint
+jshint */*.js
+jshint *.js
+echo "These files were checked"
+ls *.js
+ls */*.js
+echo "JSHint runs successfully"
 echo
 
 ## css validator
